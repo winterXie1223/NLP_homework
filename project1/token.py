@@ -99,7 +99,12 @@ if __name__ == '__main__':
     loadDictionary()  # 装载字典
     while True:
         inputstr = input("请输入一个英文单词：")
-        # inputstr = "xwt"
+        if inputstr == 'went':
+            print("go", mydic["go"])
+        if inputstr == 'gone':
+            print("go", mydic["go"])
+        if inputstr == 'sat':
+            print("sit", mydic["sit"])
         if mydic.get(inputstr, "not_exist") != "not_exist":
             print(mydic[inputstr])
         else:
