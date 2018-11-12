@@ -1,5 +1,5 @@
 mydic = {}
-filename = 'D:\学习资料\dic_ec.txt'
+filename = '/Users/apple/Downloads/dic_ec.txt'
 inputstrs = [] #一组输入
 
 

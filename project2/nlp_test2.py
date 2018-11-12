@@ -19,11 +19,26 @@ def FMM(input):
         len_line = len(sentence)
     return split_list
 
+def RMM(input):
+    sentence = input
+    split_list = []
+    len_line = len(sentence)
+    while len_line > 0:
+        tryword = sentence[0:len_line]
+
+        while tryword not in mylist:
+            if len(tryword) == 1:
+                break
+            tryword = tryword[1:len(tryword)]
+
+        split_list.append(tryword)
+        sentence = sentence[0:len(sentence)-len(tryword)]
+        len_line = len(sentence)
+
+    split_list = list(reversed(split_list))
+    return split_list
 
 
-#逆向最大匹配
-def RMM():
-    print("b")
 
 
 #装载字典到数据结构中
@@ -46,5 +61,7 @@ if __name__ == '__main__':
     #print(maxlength)
     inputstr = input("请输入一句汉语语句：")
     list_out = FMM(inputstr)
-    print(list_out)
+    list_out2 = RMM(inputstr)
+    print("正向最大匹配结果为：", list_out)
+    print("逆向最大匹配结果为：", list_out2)
 
